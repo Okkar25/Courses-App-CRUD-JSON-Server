@@ -90,3 +90,9 @@ module.exports = {
     ]
 }
 
+main.js
+import "./node_modules/flowbite/dist/flowbite.min"
+
+javascript => src folder 
+
+inside src => core folder (for selectors)
