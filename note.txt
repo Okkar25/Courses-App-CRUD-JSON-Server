@@ -1,0 +1,92 @@
+https://www.npmjs.com/package/serve?activeTab=readme
+
+npm i serve
+
+json-server db.json --watch
+
+curl http://localhost:3000/
+
+
+RestAPi (standard) => CRUD (operating according to standard)
+
+
+vite => json server 
+
+https://socket.dev/npm/package/vite-plugin-simple-json-server
+
+
+1. npm add -D vite-plugin-simple-json-server
+
+
+2. file build => vite.config.js 
+
+import jsonServer from "vite-plugin-simple-json-server";
+export default {
+  plugins: [jsonServer()],
+};
+
+
+3. mock folder build 
+json files input 
+
+
+4. npm run dev 
+
+http://localhost:5173/api (api route required)
+
+http://localhost:5173/api/courses
+http://localhost:5173/api/students
+http://localhost:5173/api/mentors
+
+
+5. postman 
+App => variable => base_url => http://localhost:5173/api
+
+
+6. adding delay 
+
+export default {
+  plugins: [
+    jsonServer({
+      delay: 1000,
+    }),
+  ],
+};
+
+
+=======================================================================================================
+
+tailwindcss install 
+
+1. npm install -D tailwindcss postcss autoprefixer
+   npx tailwindcss init -p
+
+2.   content: [
+    "./index.html",
+    "./src/**/*.{js,ts,jsx,tsx}",
+  ],
+
+3. style.css 
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+4. main.js => import "./style.css";
+   npm run dev
+
+flowbite 
+
+npm install flowbite
+
+module.exports = {
+    plugins: [
+        require('flowbite/plugin')
+    ]
+}
+
+module.exports = {
+    content: [
+        "./node_modules/flowbite/**/*.js"
+    ]
+}
+
