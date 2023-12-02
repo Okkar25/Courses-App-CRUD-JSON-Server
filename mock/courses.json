@@ -1,1 +1,26 @@
-[]
+[
+  {
+    "title": "Special Web Design",
+    "abbreviation": "SWD",
+    "fee": "300000",
+    "id": 1
+  },
+  {
+    "title": "Web Development Foundation ",
+    "abbreviation": "WDF",
+    "fee": "50000",
+    "id": 2
+  },
+  {
+    "title": "Web Application Development",
+    "abbreviation": "WAD",
+    "fee": "250000",
+    "id": 3
+  },
+  {
+    "title": "Basic UI Design ",
+    "abbreviation": "BUD",
+    "fee": "30000",
+    "id": 4
+  }
+]

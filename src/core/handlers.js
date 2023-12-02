@@ -1,7 +1,8 @@
 import { disableForm, enableForm, toast, url } from "./functions";
-import { createRecord } from "./record";
+import { createRecord, removeRecord } from "./record";
 import { createCourseForm, recordGroup } from "./selectors";
 
+// create
 export const createCourseFormHandler = async (event) => {
   event.preventDefault();
 
@@ -31,4 +32,14 @@ export const createCourseFormHandler = async (event) => {
   toast("New Course Added");
 
   createCourseForm.reset(); // clearing out data
+};
+
+// delete
+export const recordGroupHandler = (event) => {
+  if (event.target.classList.contains("record-del")) {
+    const currentRow = event.target.closest("tr");
+    const currentId = currentRow.getAttribute("data-id");
+    removeRecord(currentId);
+    currentRow.remove();
+  }
 };
