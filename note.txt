@@ -96,3 +96,28 @@ import "./node_modules/flowbite/dist/flowbite.min"
 javascript => src folder 
 
 inside src => core folder (for selectors)
+
+
+----------------------------------------------------------------------------------------------------------------
+
+
+tailwind spin loading animation 
+
+disabled:before:border-2 
+disabled:before:border-blue-100 
+disabled:before:w-4 
+disabled:before:h-4 
+disabled:before:block 
+disabled:before:rounded-full 
+disabled:before:border-l-blue-400 
+disabled:before:animate-spin
+flex items-center gap-2
+group
+
+<span class="hidden group-disabled:inline">Loading ...</span>
+<span class="inline group-disabled:hidden">Create</span>
+
+
+
+
+
