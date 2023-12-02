@@ -10,6 +10,11 @@ curl http://localhost:3000/
 RestAPi (standard) => CRUD (operating according to standard)
 
 
+-----------------------------------------------------------------------------
+
+npm create vite 
+npm i 
+
 vite => json server 
 
 https://socket.dev/npm/package/vite-plugin-simple-json-server
@@ -27,7 +32,7 @@ export default {
 
 
 3. mock folder build 
-json files input 
+json files input (courses.json / students.json / mentors.json)
 
 
 4. npm run dev 
@@ -91,7 +96,7 @@ module.exports = {
 }
 
 main.js
-import "./node_modules/flowbite/dist/flowbite.min"
+import "./node_modules/flowbite/dist/flowbite.min"    ***** js file connection required *****
 
 javascript => src folder 
 
@@ -118,6 +123,25 @@ group
 <span class="inline group-disabled:hidden">Create</span>
 
 
+@import "./node_modules/sweetalert2/dist/sweetalert2.min.css";   ---->    in style.css
 
+import "./node_modules/sweetalert2/dist/sweetalert2.min";        ---->    in main.js
+
+import Swal from "sweetalert2";  (added manually)
+
+
+----------------------------------------------------------------------------------------------------
+
+*************
+
+html <template></template> tag 
+
+template is not visible in UI 
+no need to insert html tags in innerHTML = ``
+
+template ---> document fragment  --> node
+clone node inside template tag 
+
+const recordUi = recordUiTemplate.content.cloneNode(true); ***** 
 
 

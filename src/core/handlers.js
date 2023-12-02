@@ -1,5 +1,6 @@
-import { url } from "./functions";
-import { createCourseForm } from "./selectors";
+import { disableForm, enableForm, toast, url } from "./functions";
+import { createRecord } from "./record";
+import { createCourseForm, recordGroup } from "./selectors";
 
 export const createCourseFormHandler = async (event) => {
   event.preventDefault();
@@ -13,24 +14,21 @@ export const createCourseFormHandler = async (event) => {
   };
 
   // disable form (to avoid "CREATE" btn being clicked multiple times)
-  createCourseForm
-    .querySelectorAll("input")
-    .forEach((el) => el.toggleAttribute("disabled"));
-  createCourseForm.querySelector("button").toggleAttribute("disabled");
+  disableForm(createCourseForm);
 
   const response = await fetch(url("/courses"), {
     method: "POST",
     headers: { "content-type": "application/json" },
     body: JSON.stringify(jsonData),
   });
-  const data = await response.json();
-  console.log(data);
-
-  createCourseForm.reset(); // clearing out data
+  const dataFromServer = await response.json();
+  recordGroup.append(createRecord(dataFromServer)); // adding newly created record into row
 
   // undo disable form
-  createCourseForm
-    .querySelectorAll("input")
-    .forEach((el) => el.toggleAttribute("disabled"));
-  createCourseForm.querySelector("button").toggleAttribute("disabled");
+  enableForm(createCourseForm);
+
+  // courses added toast
+  toast("New Course Added");
+
+  createCourseForm.reset(); // clearing out data
 };
