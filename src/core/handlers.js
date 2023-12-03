@@ -39,7 +39,20 @@ export const recordGroupHandler = (event) => {
   if (event.target.classList.contains("record-del")) {
     const currentRow = event.target.closest("tr");
     const currentId = currentRow.getAttribute("data-id");
-    removeRecord(currentId);
-    currentRow.remove();
+
+    Swal.fire({
+      title: "Are you sure?",
+      text: "This course will be removed !",
+      icon: "warning",
+      showCancelButton: true,
+      confirmButtonColor: "#3085d6",
+      cancelButtonColor: "#d33",
+      confirmButtonText: "Remove",
+    }).then((result) => {
+      if (result.isConfirmed) {
+        removeRecord(currentId);
+        currentRow.remove();
+      }
+    });
   }
 };

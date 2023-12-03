@@ -1,4 +1,4 @@
-import { url } from "./functions";
+import { toast, url } from "./functions";
 import { recordGroup, recordUiTemplate } from "./selectors";
 
 export const createRecord = ({ title, abbreviation, fee, id }) => {
@@ -19,5 +19,9 @@ export const renderRecord = (lists) => {
 export const removeRecord = (id) => {
   fetch(url("/courses/" + id), {
     method: "DELETE",
+  }).then((res) => {
+    if (res.status === 204) {
+      toast("Course Removed Successfully");
+    }
   });
 };
